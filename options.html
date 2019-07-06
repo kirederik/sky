@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sky: Concourse Background selection</title>
+    <style type="text/css" media="screen">
+      .input-large {
+        width: 300px;
+      }
+
+      .form-actions {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Options</h1>
+
+    <label for="bg-link">
+      Background image URL
+      <input class="input-large" type="text" id="bg-link">
+    </label>
+
+    <div id="status"></div>
+    <div class="form-actions">
+      <button id="save">Save</button>
+      <button id="restore">Restore</button>
+    </div>
+
+    <script src="options.js"></script>
+    <script src="sky_content_script.js"></script>
+  </body>
+</html>

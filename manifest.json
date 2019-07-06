@@ -1,12 +1,28 @@
 {
     "manifest_version": 2,
-   
-    "name": "Sky",
+    "name": "Sky: Concourse Background",
     "version": "0.1.0",
     "description": "Concourse background",
-   
-    "content_scripts": [{
-        "js": ["background.js"],
-        "matches": ["<all_urls>"]
-    }]
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": ["storage", "tabs"],
+    "options_page": "options.html",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["sky_content_script.js"]
+        }
+    ],
+    "options_ui": {
+        "page": "options.html"
+    },
+    "page_action": {
+        "default_icon": {
+            "32" : "sky.png"
+        },
+        "default_title": "Concourse Backgroud",
+        "default_popup": "options.html"
+    }
 }

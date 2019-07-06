@@ -4,8 +4,9 @@
 
 'use strict';
 
-var title = document.getElementsByTagName('title')[0].innerText
-
-if (title.endsWith("Concourse")) {    console.log("match!");
-  document.getElementsByTagName("body")[0].style = "background-image: url('http://chillestmonkey.com/img/monkey.gif'); background-size: cover;"
-}
+chrome.runtime.onMessage.addListener(function(req, sender) {
+  if (req.show) {
+    chrome.pageAction.show(sender.tab.id);
+    chrome.pageAction.setTitle({tabId: sender.tab.id, title: "Sky - Concourse background"});
+  }
+});
